@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class force : MonoBehaviour
 {
-
     public Rigidbody2D armBody;
     Rigidbody2D mainBody;
 
@@ -22,27 +21,9 @@ public class force : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            mySource.PlayOneShot(jumpClip);
-            armBody.AddForce(transform.up * power, ForceMode2D.Impulse);
-        }
-
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.Space))
         {
             mainBody.velocity = new Vector3(0, velocity, 0);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            mainBody.velocity = new Vector3(0, -velocity, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            mainBody.velocity = new Vector3(velocity, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            mainBody.velocity = new Vector3(-velocity, 0, 0);
         }
     }
 }
